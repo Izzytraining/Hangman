@@ -1,0 +1,108 @@
+// Hangman.prototype.getStatus = function () {
+// //approach 3
+// const finished = this.word.every((letter) => {
+//   return this.guessedLetters.includes(letter)
+// })
+
+//   //approach 2
+// // const lettersUnguessed = this.word.filter((letter) => {
+// //   return !this.guessedLetters.includes(letter)
+// // })
+// // const finished = lettersUnguessed.length === 0
+
+// //approach 1
+// // let finished = true
+
+// // this.word.forEach((letter) => {
+// //   if(this.guessedLetters.includes(letter)) {
+// //     finished = true
+// //   } else {
+// //     finished = false
+// //   }
+// // })
+
+// const getPuzzle = (wordCount) =>
+//   new Promise((resolve, reject) => {
+//     const request = new XMLHttpRequest();
+
+//     request.addEventListener("readystatechange", (e) => {
+//       if (e.target.readyState === 4 && e.target.status === 200) {
+//         const data = JSON.parse(e.target.responseText);
+//         resolve(data.puzzle);
+//       } else if (e.target.readyState === 4) {
+//         reject("An error has taken place", undefined);
+//         console.log("an error has taken place");
+//       }
+//     });
+//     request.open("GET", "https://puzzle.mead.io/puzzle?wordCount=3");
+//     request.send();
+//   });
+
+//////////////////////////
+// const countryRequest = new XMLHttpRequest();
+
+// countryRequest.addEventListener("readystatechange", (e) => {
+//   if (e.target.readyState === 4 && e.target.status === 200) {
+//     const data = JSON.parse(e.target.responseText);
+//     const country = data.find(
+//       (country) => country.alpha2Code === countryCode
+//     );
+//     resolve(country);
+//   } else if (e.target.readyStatet === 4) {
+//     reject("Unable to fetch  data");
+//   }
+// });
+
+// countryRequest.open("GET", "https://restcountries.com/v2/all");
+// countryRequest.send();
+
+
+/ /////Fetch api
+// fetch("https://puzzle.mead.io/puzzle", {})
+//   .then((response) => {
+//     if (response.status === 200) {
+//       return response.json();
+//     } else {
+//       throw new Error("Unable to fetch puzzle");
+//     }
+//   })
+//   .then((data) => {
+//     console.log(data.puzzle);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
+///////////////////////////
+// getCountry("GB")
+//   .then((country) => {
+//     console.log(country.name);
+//   })
+//   .catch((err) => {
+//     console.log(`Error: ${err}`);
+//   });
+
+
+// const getPuzzleOld = (wordCount) => {
+    //   return fetch(`https://puzzle.mead.io/puzzle?wordCount=${wordCount}`)
+    //     .then((response) => {
+    //       if (response.status === 200) {
+    //         return response.json();
+    //       } else {
+    //         throw new Error("Unable to fetch puzzle");
+    //       }
+    //     })
+    //     .then((data) => {
+    //       return data.puzzle;
+    //     });
+    // };
+    // //////////////////////////
+    //// getLocation()
+//   .then((location) => {
+//    return getCountry(location.country)
+//   }).then((country) => {
+// console.log(country.name)
+//   })
+//   .catch((err) => {
+//     console.log(`Error: ${err}`);
+//   });
